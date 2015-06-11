@@ -1,0 +1,6 @@
+Exceptions
+
+WHEN a program violates the semantic constraints of the Java programming language, the Java Virtual Machine signals this error to the program as an exception. An example of such a violation is an attempt to index outside the bounds of an array. Some programming languages and their implementations react to such errors by peremptorily terminating the program; other programming languages allow an implementation to react in an arbitrary or unpredictable way. Neither of these approaches is compatible with the design goals of the Java SE platform: to provide portability and robustness. 
+
+Instead, the Java programming language specifies that an exception will be thrown when semantic constraints are violated and will cause a non-local transfer of control from the point where the exception occurred to a point that can be specified by the programmer. 
+An exception is said to be thrown from the point where it occurred and is said to be caught at the point to which control is transferred.

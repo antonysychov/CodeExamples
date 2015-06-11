@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="WarPlane.xsl"?>
+<planes xmlns="www.planes.com">
+    <plane model="F-15 STRIKE EAGLE">
+        <origin>USA</origin>
+        <chars>
+            <type>Bomber-Fighter</type>
+            <spotsNumber>1</spotsNumber>
+            <ammunition>
+                <rocketsNumber>3</rocketsNumber>
+                <hasRadar>true</hasRadar>
+            </ammunition>
+        </chars>
+        <parameters>
+            <length>19.45</length>
+            <width>5</width>
+            <height>5.65</height>
+        </parameters>
+        <price>45000</price>
+    </plane>
+
+    <plane model="McDonnell Douglas F-4 Phantom II">
+        <origin>USA</origin>
+        <chars>
+            <type>Bomber-Fighter</type>
+            <spotsNumber>2</spotsNumber>
+        </chars>
+        <parameters>
+            <length>7</length>
+            <width>6</width>
+            <height>4</height>
+        </parameters>
+        <price>30000</price>
+    </plane>
+</planes>

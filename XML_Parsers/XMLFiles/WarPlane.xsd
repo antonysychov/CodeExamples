@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:wp="www.planes.com"
+           targetNamespace="www.planes.com">
+    <xs:element name="planes" type="wp:rootType"/>
+    <xs:complexType name="rootType">
+        <xs:sequence>
+            <xs:element name="plane"  type="wp:planeType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="planeType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="origin"/>
+            <xs:element type="wp:charsType" name="chars"/>
+            <xs:element type="wp:parametersType" name="parameters"/>
+            <xs:element name="price">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:float">
+                            <xs:attribute name="unit" type="xs:string" default="$"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="model" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="charsType">
+        <xs:sequence>
+            <xs:element name="type">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Support plane"/>
+                        <xs:enumeration value="Air scout"/>
+                        <xs:enumeration value="Strafer"/>
+                        <xs:enumeration value="Pursuit plane"/>
+                        <xs:enumeration value="Interceptor"/>
+                        <xs:enumeration value="Bomber-Fighter"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="spotsNumber">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="wp:ammunitionType" name="ammunition" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ammunitionType">
+        <xs:sequence>
+            <xs:element name="rocketsNumber">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:minInclusive value="0"/>
+                        <xs:maxInclusive value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element type="xs:boolean" name="hasRadar"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="parametersType">
+        <xs:sequence>
+            <xs:element name="length" type="wp:dimension"/>
+            <xs:element name="width" type="wp:dimension"/>
+            <xs:element name="height" type="wp:dimension"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="dimension">
+        <xs:simpleContent>
+            <xs:extension base="xs:float">
+                <xs:attribute name="unit" type="xs:string" default="м"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
