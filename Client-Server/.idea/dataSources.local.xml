@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PersistenceUnit/EclipseLink" uuid="5df15d02-ed92-4028-8127-f6b943276c39">
+      <schema-pattern>*</schema-pattern>
+      <default-schemas>*.APP</default-schemas>
+    </data-source>
+  </component>
+</project>

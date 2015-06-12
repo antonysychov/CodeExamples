@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<dataset>
+    <TBL_PLAYER BALANCE_VERSION="91" USERNAME="simple user"  BALANCE="0.0"/>
+    <TBL_PLAYER BALANCE_VERSION="92" USERNAME="simple user"  BALANCE="1.0"/>
+    <TBL_PLAYER BALANCE_VERSION="93" USERNAME="simple user"  BALANCE="2.1"/>
+    <TBL_PLAYER BALANCE_VERSION="94" USERNAME="simple user"  BALANCE="3.4"/>
+    <TBL_PLAYER BALANCE_VERSION="95" USERNAME="simple user"  BALANCE="4.6"/>
+    <TBL_PLAYER BALANCE_VERSION="96" USERNAME="simple user"  BALANCE="5.0"/>
+</dataset>

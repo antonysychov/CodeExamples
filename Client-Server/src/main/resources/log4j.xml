@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="false" threshold="debug">
+    <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p %c %x - %m%n"/>
+        </layout>
+    </appender>
+    <appender name="FileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="maxFileSize" value="100KB"/>
+        <param name="maxBackupIndex" value="5"/>
+        <param name="File" value="application.log"/>
+        <param name="append" value="true"/>
+        <param name="threshold" value="info"/>
+        <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+            <param name="FileNamePattern" value="application.log.%d{yyyy-MM}**.gz**"/>
+            <param name="ActiveFileName" value="application.log"/>
+        </rollingPolicy>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L – %m%n"/>
+        </layout>
+    </appender>
+
+    <category name="org.apache.commons">
+        <priority value="error"/>
+    </category>
+    <root>
+        <priority value="debug"/>
+        <appender-ref ref="FileAppender"/>
+        <appender-ref ref="ConsoleAppender"/>
+    </root>
+</log4j:configuration>
